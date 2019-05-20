@@ -16,37 +16,41 @@
   <body>
     <div class="container">
       <div class="box1">
-        <input placeholder="Search by character name"></input>
-        <button> <a href="#">Search</a> </button>
+        <input id="searchItem" placeholder="Search by character name"></input>
+        <button onclick="makeAPIcall()"> Search</button>
       </div>
       <div class="box2">
         <ul>
-          <li class="left"><span>0</span> result</li>
+          <li class="left"><span id="numResult">0</span> RESULT</li>
           <li class="right">
             <ul class="dropdown">
                 <li class="dropleft">GENDER</li>
-                <li class="dropright">filter by gender <img src="assets/graphics/chevron--down.svg" </li>
+                <li class="dropright">
+                  Filter by gender <img src="assets/graphics/chevron--down.svg">
+                  <div class="dropContent">
+                    <option value="female"> Female <span> </span></option>
+                    <option value="male"> Male <span> </span> </option>
+                  </div>
+
+                </li>
             </ul>
           </li>
         </ul>
       </div>
       <div class="box3">
-          <div class="result">
             <figure>
               <img src="assets/graphics/vader-icon.svg">
               <figcaption><p>Search by character name </p></figcaption>
             </figure>
-            <!-- <ul>
-              <li class="left"><span>0</span> result</li>
-              <li class="right">
-
-              </li>
-            </ul> -->
-          </div>
+            <div class="loader">
+              <img src="assets/graphics/loading.png">
+            </div>
+            <ul class="result">
+            </ul>
       </div>
 
     </div>
-
+    <script src="script.js"></script>
 
   </body>
 </html>

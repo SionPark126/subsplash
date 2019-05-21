@@ -3,15 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title></title>
-    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-    <link href="style1.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
- -->
-  </head>
+    <title>Subsplash Front-end challenge</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"> </script>
+   </head>
 
   <body>
     <div class="container">
@@ -21,19 +16,20 @@
       </div>
       <div class="box2">
         <ul>
-          <li class="left"><span id="numResult">0</span> RESULT</li>
+          <li class="left"><span class="numResult">0</span> RESULTS</li>
           <li class="right">
             <ul class="dropdown">
                 <li class="dropleft">GENDER</li>
                 <li class="dropright">
-                  Filter by gender <img src="assets/graphics/chevron--down.svg">
-                  <div class="dropContent">
-                    <option value="female"> Female <span> </span></option>
-                    <option value="male"> Male <span> </span> </option>
-                  </div>
-
+                  <span class="selected">Filter by gender</span> <img class="arrow" src="assets/graphics/chevron--down.svg">
+                  <ul class="dropContent">
+                    <li class="option"> Female <span class="female"> </span></li>
+                    <li class="option"> Male <span class="male"> </span> </li>
+                    <li class="option"> All (<span class="numResult">0</span>)</li>
+                  </ul>
                 </li>
             </ul>
+
           </li>
         </ul>
       </div>

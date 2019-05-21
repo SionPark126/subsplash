@@ -9,6 +9,15 @@
   font-weight: bold;
 }
 
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 * {
   font-family: montserrat;
   border-radius: 3px;
@@ -19,7 +28,7 @@ ul, li {
   list-style: none;
 }
 body{
-  background: #eaedf2;
+  background: #f2f4f7;
   padding: 50px 0;
 }
 
@@ -39,8 +48,10 @@ body{
 }
 input {
   width: 75%;
-  height: 25px;
+  height: 28px;
   padding: 0 7px;
+  background: #f2f4f7;
+  color: #67696b;
   /* border-radius: 3px; */
 
 }
@@ -50,7 +61,7 @@ button {
   height: 30px;
   margin-left: 5px;
   color: white;
-  background: #4487fc;
+  background: #5998ff;
 
 }
 .box2{
@@ -67,26 +78,55 @@ li.left {
 }
 li.right {
   float: right;
+  /* width: 40%; */
+
 }
 ul.dropdown > li{
     display: inline-block;
 }
 
+.option {
+  padding: 0 0 5px 0;
+}
+
+.option:hover {
+  background-color: blue;
+}
+
 .dropleft {
   color: #c5cbd6;
 }
+
 .dropright {
-    padding: 7px;
+    padding: 10px;
     margin-left: 10px;
     background: white;
     box-shadow: 2px 2px 3px rgba(184,184,184,0.25), -2px 0 3px rgba(184,184,184,0.25);
+    position: relative;
+
+    /* Fixed width? */
+
+}
+/* Things to work on
+Need to change input box style and button Color
+Font spacing, size, colors
+Dropdown arrow flipping and fixing in one position
+Dropdown list spacing and style
+Dropdown fixed position, absolute
+Overall container sizes
+*/
+.selected {
+  /* width: 80%; */
+  padding-right: 9px;
 }
 
 .dropContent{
   display: none;
+  /* position: absolute; */
+  /* z-index: 1; */
 }
 .box3{
-    margin-top: 10px;
+    margin-top: 15px;
     background: white;
     /* height: 100%; */
     height: 300px;
@@ -95,6 +135,7 @@ ul.dropdown > li{
 
 
 }
+
 /* figure and caption distance fix */
 figure {
     position: absolute;
@@ -103,28 +144,40 @@ figure {
     width: 260px;
     height:100px;
     /* margin: 300px; */
-    background: yellow;
+    /* background: yellow; */
     top: 50%;
     margin-top: -50px;
     left: 50%;
     margin-left: -130px;
 }
+figcaption{
+  color: #c5cbd6;
+}
 
 .loader {
+  width: 50%;
   display: none;
   position: absolute;
-  /* animation: spin 4s linear infinite; */
+  top: 50%;
+  margin-top: -100px;
+  left: 50%;
+  margin-left: -100px;
+  animation: rotate 3s infinite;
 }
 
 .result{
   display: none;
+  background: white;
 }
 
 .resultList{
-  border: 3px solid red;
-  padding: 5px;
+  box-shadow: 2px 2px 3px rgba(184,184,184,0.25), -2px 0 3px rgba(184,184,184,0.25);
+  padding: 8px;
 }
 
 .subList{
-  font: 0.8rem;
+  font-size: 0.7rem;
+  margin-top: 2px;
+  /* color: #c5cbd6; */
+
 }

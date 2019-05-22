@@ -2,7 +2,6 @@
 $(document).ready(function(){
   $(".dropright").click(function(){
     $(".dropContent").toggle("show").attr("");
-    //make the arrow rotate
     $(".arrow").css('transform','rotate(180 deg)')
 
   });
@@ -20,6 +19,7 @@ $(document).ready(function(){
       $(".resultList").show();
     }
   })
+
 })
 
 
@@ -33,6 +33,7 @@ async function makeAPIcall(){
 
   $(".loader").hide();
   // $(".box3").css({"background": "#c5cbd6"})
+  $(".box3").css({"height": "100%"})
   displayAll(response);
 }
 
@@ -72,10 +73,10 @@ function displayAll(response){
       }
     }
     if (response[i].hair_color){
-      html+= "." + capitalize(response[i].hair_color) +" hair"
+      html+= " <span class=\'middot\'>&#183</span> " + capitalize(response[i].hair_color) +" hair"
     }
     if (response[i].eye_color){
-      html +="." + capitalize(response[i].eye_color) +" eye"
+      html +=" <span class=\'middot\'>&#183</span> " + capitalize(response[i].eye_color) +" eyes"
     }
     $(".resultList").eq(i).append("<li class=\"subList\">" + html + "</li>");
   }

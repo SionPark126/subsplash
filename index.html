@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Subsplash Front-end challenge</title>
     <link href="style.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
    </head>
 
   <body>
@@ -15,22 +15,23 @@
         <button onclick="makeAPIcall()"> Search</button>
       </div>
       <div class="box2">
-        <ul>
+        <ul class="box2right">
           <li class="left"><span class="numResult">0</span> RESULTS</li>
           <li class="right">
             <ul class="dropdown">
                 <li class="dropleft">GENDER</li>
                 <li class="dropright">
-                  <span class="selected">Filter by gender</span> <img class="arrow" src="assets/graphics/chevron--down.svg">
+                  <div class="filtertxt">
+                    <span class="selected">Filter by gender</span> <img class="arrow" src="assets/graphics/chevron--down.svg">
+                  </div>
                   <ul class="dropContent">
                     <li class="option"> Female <span class="female"> </span></li>
                     <li class="option"> Male <span class="male"> </span> </li>
                     <li class="option"> All (<span class="numResult">0</span>)</li>
                   </ul>
                 </li>
-            </ul>
-
-          </li>
+           </ul>
+        </li>
         </ul>
       </div>
       <div class="box3">
@@ -39,7 +40,7 @@
               <figcaption><p>Search by character name </p></figcaption>
             </figure>
             <div class="loader">
-              <img src="assets/graphics/loading.png">
+              <img class="loadingImg" src="assets/graphics/loading.png">
             </div>
             <ul class="result">
             </ul>
@@ -47,6 +48,5 @@
 
     </div>
     <script src="script.js"></script>
-
   </body>
 </html>

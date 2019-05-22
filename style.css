@@ -1,6 +1,7 @@
 @font-face{
   font-family: montserrat;
   src: url(assets/fonts/Montserrat/Montserrat-Regular.ttf);
+  font-weight: normal;
 }
 
 @font-face{
@@ -20,7 +21,9 @@
 
 * {
   font-family: montserrat;
+  font-weight: normal;
   border-radius: 3px;
+  color: #3a3c3f;
 }
 ul, li {
   margin: 0;
@@ -35,6 +38,7 @@ body{
 .container {
   width :55%;
   min-width: 300px;
+  max-width: 600px;
   margin: 0 auto;
   /* background: yellow; */
 
@@ -46,14 +50,19 @@ body{
   text-align: center;
   box-shadow: 2px 2px 3px rgba(184,184,184,0.25), -2px 0 3px rgba(184,184,184,0.25);
 }
+
 input {
   width: 75%;
   height: 28px;
   padding: 0 7px;
   background: #f2f4f7;
-  color: #67696b;
+  color: #63676d;
+  border: 1px solid #d9d9db;
   /* border-radius: 3px; */
 
+}
+::placeholder{
+  color: #d9d9db;
 }
 /* Word search inside button is inot repsonsive */
 button {
@@ -66,27 +75,37 @@ button {
 }
 .box2{
     margin-top: 30px;
+    height: 40px;
+    position:relative;
 }
+
 ul {
     overflow:hidden;
     font-size: 0.8rem;
 }
 li.left {
     float: left;
-    line-height: 31px;
+    line-height: 40px;
     color: #a3abba;
+    letter-spacing: 0.1em;
 }
+
 li.right {
   float: right;
-  /* width: 40%; */
-
+  width: 40%;
+  line-height:40px;
 }
-ul.dropdown > li{
-    display: inline-block;
+
+ul.dropdown{
+width: 230px;
+right: 0;
+position: absolute;
+overflow: hidden;
+z-index: 999;
 }
 
 .option {
-  padding: 0 0 5px 0;
+  padding-left: 10px;
 }
 
 .option:hover {
@@ -94,37 +113,43 @@ ul.dropdown > li{
 }
 
 .dropleft {
+  float:left;
   color: #c5cbd6;
+  letter-spacing: 0.1em;
 }
 
 .dropright {
-    padding: 10px;
+    width: 150px;
     margin-left: 10px;
     background: white;
+    border: 1px solid gray;
     box-shadow: 2px 2px 3px rgba(184,184,184,0.25), -2px 0 3px rgba(184,184,184,0.25);
-    position: relative;
-
-    /* Fixed width? */
-
+    float:right;
 }
-/* Things to work on
-Need to change input box style and button Color
-Font spacing, size, colors
-Dropdown arrow flipping and fixing in one position
-Dropdown list spacing and style
-Dropdown fixed position, absolute
-Overall container sizes
-*/
+
 .selected {
-  /* width: 80%; */
   padding-right: 9px;
+}
+
+.filtertxt{
+  height: 35px;
+  line-height: 35px;
+  padding-left: 10px;
+}
+
+.filtertxt:hover{
+  background-color: blue;
+}
+
+.arrow{
+  top: 13px;
+  right: 8px;
 }
 
 .dropContent{
   display: none;
-  /* position: absolute; */
-  /* z-index: 1; */
 }
+
 .box3{
     margin-top: 15px;
     background: white;
@@ -132,19 +157,14 @@ Overall container sizes
     height: 300px;
     position: relative;
     box-shadow: 2px 2px 3px rgba(184,184,184,0.25), -2px 0 3px rgba(184,184,184,0.25);
-
-
 }
 
 /* figure and caption distance fix */
 figure {
     position: absolute;
     text-align:center;
-    /* width: 55%; */
     width: 260px;
     height:100px;
-    /* margin: 300px; */
-    /* background: yellow; */
     top: 50%;
     margin-top: -50px;
     left: 50%;
@@ -155,14 +175,17 @@ figcaption{
 }
 
 .loader {
-  width: 50%;
   display: none;
   position: absolute;
   top: 50%;
-  margin-top: -100px;
+  margin-top: -45px;
   left: 50%;
-  margin-left: -100px;
+  margin-left: -45px;
   animation: rotate 3s infinite;
+}
+
+.loadingImg{
+  width: 90px;
 }
 
 .result{
@@ -178,6 +201,6 @@ figcaption{
 .subList{
   font-size: 0.7rem;
   margin-top: 2px;
-  /* color: #c5cbd6; */
+  color: #c5cbd6;
 
 }

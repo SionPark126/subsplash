@@ -1,15 +1,14 @@
 
 $(document).ready(function(){
   $(".dropright").click(function(){
-    $(".dropContent").toggle("show").attr("");
-    $(".arrow").css('transform','rotate(180 deg)')
-
+    $(".dropContent").toggle("show");
+    $(".arrow").toggleClass("flip");
   });
 
   $(".dropContent > li").click(function(){
     var option= $(this).children().attr("class");
     $(".option").show()
-    if (option != "numResult"){
+    if (option != "all"){
       $(".selected").html($(this).html());
       $(this).hide()
       filterByGender(option);
@@ -19,9 +18,7 @@ $(document).ready(function(){
       $(".resultList").show();
     }
   })
-
 })
-
 
 async function makeAPIcall(){
   $(".loader").show();
@@ -32,7 +29,6 @@ async function makeAPIcall(){
   response= response.results;
 
   $(".loader").hide();
-  // $(".box3").css({"background": "#c5cbd6"})
   $(".box3").css({"height": "100%"})
   displayAll(response);
 }
@@ -52,11 +48,18 @@ function apiCall(name){
 }
 
 function displayAll(response){
-  $(".numResult").text(response.length);
+  var dataLen = response.length;
+  if(dataLen <2){
+    $(".numResult").text(dataLen +" RESULT");
+  }
+  else{
+      $(".numResult").text(dataLen +" RESULTS");
+  }
+  $(".all").text(dataLen);
   var numFemale =0;
   var numMale =0;
 
-  for (var i=0; i < response.length; i++){
+  for (var i=0; i < dataLen; i++){
   $(".result").append('<ul class=\"resultList\"></ul>');
   $(".resultList").eq(i).append('<li>'+ response[i].name+ '</li>');
 
